@@ -14,8 +14,9 @@
                     <h4 class="fw-semibold mb-8">Users</h4>
                 </div>
                 <div class="col-md-8 col-xl-9 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
-                    <a href="/admin/users/create" id="btn-add-contact" class="btn btn-info d-flex align-items-center">
-                        <i class="ti ti-users text-white me-1 fs-5"></i> Add Contact
+                    <a href="{{ route('admin.users.create') }}" id="btn-add-contact"
+                        class="btn btn-info d-flex align-items-center">
+                        <i class="ti ti-users text-white me-1 fs-5"></i> Create New User
                     </a>
                 </div>
             </div>
@@ -28,6 +29,13 @@
                 <div class="mb-2">
                     <h5 class="mb-3">Data Users</h5>
                 </div>
+
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success">
+                        <p>{{ $message }}</p>
+                    </div>
+                @endif
+
                 <div class="table-responsive">
                     <table id="zero_config" class="table border table-striped table-bordered text-nowrap">
                         <thead>
@@ -37,7 +45,7 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Roles</th>
-                                <th>Action</th>
+                                <th width="280px">Action</th>
                             </tr>
                             <!-- end row -->
                         </thead>
