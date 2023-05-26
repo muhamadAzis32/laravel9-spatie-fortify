@@ -21,6 +21,12 @@
     <!-- Favicon -->
     <!-- --------------------------------------------------- -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/logos/favicon.png') }}" />
+
+    <!-- --------------------------------------------------- -->
+    <!-- Datatable -->
+    <!-- --------------------------------------------------- -->
+    <link rel="stylesheet" href="{{ asset('assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}">
+
     <!-- --------------------------------------------------- -->
     <!-- Core Css -->
     <!-- --------------------------------------------------- -->
@@ -76,6 +82,8 @@
     <!-- ---------------------------------------------- -->
     <!-- current page js files -->
     <!-- ---------------------------------------------- -->
+    <script src="{{ asset('assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/js/datatable/datatable-basic.init.js') }}"></script>
 
 </body>
 

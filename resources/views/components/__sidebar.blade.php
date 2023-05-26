@@ -24,7 +24,7 @@
                         <!-- Dashboard -->
                         <!-- =================== -->
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="index.html" aria-expanded="false">
+                            <a class="sidebar-link" href="/admin/users" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-users"></i>
                                 </span>
@@ -32,7 +32,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="index2.html" aria-expanded="false">
+                            <a class="sidebar-link" href="/admin/roles" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-user"></i>
                                 </span>
