@@ -89,9 +89,9 @@
                                         Save
                                     </div>
                                 </button>
-                                <button href="/admin/users" class="btn btn-danger rounded-pill px-4 ms-2 text-white">
+                                <a href="/admin/users" class="btn btn-danger rounded-pill px-4 ms-2 text-white">
                                     Kembali
-                                </button>
+                                </a>
                             </div>
 
                         </form>
