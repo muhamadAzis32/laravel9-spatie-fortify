@@ -29,25 +29,53 @@
                             <div class="col-sm-8 col-md-6 col-xl-9">
                                 <h2 class="mb-3 fs-7 fw-bolder">Welcome to Modernize</h2>
                                 <p class=" mb-9">Your Admin Dashboard</p>
-                                <form>
+                                <form action="{{ route('register') }}" method="POST">
+                                    @csrf
                                     <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Name</label>
-                                        <input type="text" class="form-control" id="exampleInputtext"
+                                        <label class="form-label">Name</label>
+                                        <input type="text" name="name" value="{{ old('name') }}"
+                                            class="form-control @error('name') is-invalid @enderror"
                                             aria-describedby="textHelp">
+                                        @error('name')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
+
                                     <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1"
+                                        <label class="form-label">Email address</label>
+                                        <input type="email" name="email" value="{{ old('email') }}"
+                                            class="form-control @error('email') is-invalid @enderror"
                                             aria-describedby="emailHelp">
+                                        @error('email')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <div class="mb-4">
-                                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                        <label class="form-label">Password</label>
+                                        <input type="password" name="password"
+                                            class="form-control @error('password') is-invalid @enderror">
+                                        @error('password')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
-                                    <a href="" class="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign Up</a>
+
+                                    <div class="mb-4">
+                                        <label class="form-label">Konfirmasi Password</label>
+                                        <input type="password" name="password_confirmation" class="form-control">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign
+                                        Up</button>
+
                                     <div class="d-flex align-items-center">
                                         <p class="fs-4 mb-0 text-dark">Already have an Account?</p>
-                                        <a class="text-primary fw-medium ms-2" href="">Sign In</a>
+                                        <a class="text-primary fw-medium ms-2" href="/login">Sign In</a>
                                     </div>
                                 </form>
                             </div>

@@ -17,14 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
+Route::get('/admin/dashboard', function () {
     return view('pages.admin.dashboard.index');
-});
-
-Route::get('/login', function () {
-    return view('pages.auth.login');
-});
-
-Route::get('/register', function () {
-    return view('pages.auth.register');
 });
