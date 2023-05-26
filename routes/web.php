@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin/dashboard', function () {
-    return view('pages.admin.dashboard.index');
+//prefix "admin"
+Route::prefix('admin')->group(function () {
+
+    Route::group(['middleware' => ['auth']], function () {
+
+        Route::get('/dashboard', function () {
+            return view('pages.admin.dashboard.index');
+        });
+
+        Route::resource('users', UserController::class, ['as' => 'admin']);
+
+    });
 });
