@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('admin')->group(function () {
 
     // hanya bisa di akses oleh role admin
-    Route::group(['middleware' => ['auth', 'role:admin']], function () {
+    Route::group(['middleware' => ['auth', 'role:Admin']], function () {
 
         Route::get('/dashboard', function () {
             return view('pages.admin.dashboard.index');
